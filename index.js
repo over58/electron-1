@@ -2,8 +2,7 @@ const { app, BrowserWindow } = require("electron");
 
 function createWindow (){
   let win = new BrowserWindow({
-    kiosk: false, //锁定模式，屏蔽了用户操作其他应用以及系统本身的能力，用户要么操作本应用要么退出. 在mac os下，不能将fullscreen设置为true,否则通过函数的形式解除kiosk不生效
-    icon: './favicon.ico', // 在windows上才能使用
+    show: false,
     webPreferences: {
       nodeIntegration: true
     }
@@ -14,6 +13,11 @@ function createWindow (){
   // 打开开发者工具
   win.webContents.openDevTools()
   // 当 window 被关闭，这个事件会被触发。
+
+  win.on('ready-to-show', () => {
+    win.show()
+  })
+
   win.on('closed', () => {
     // 取消引用 window 对象，如果你的应用支持多窗口的话，
     // 通常会把多个 window 对象存放在一个数组里面，
