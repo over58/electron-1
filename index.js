@@ -2,15 +2,7 @@ const { app, BrowserWindow } = require("electron");
 
 function createWindow (){
   let win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    maxWidth: 1000,
-    maxHeight: 800,
-    backgroundColor: '#2e2c29',
-    fullscreen: true,
-    fullscreenable: false,
-    transparent: true,
-    frame: false, // 有没有菜单栏了
+    kiosk: false, //锁定模式，屏蔽了用户操作其他应用以及系统本身的能力，用户要么操作本应用要么退出. 在mac os下，不能将fullscreen设置为true,否则通过函数的形式解除kiosk不生效
     webPreferences: {
       nodeIntegration: true
     }

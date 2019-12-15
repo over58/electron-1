@@ -17,3 +17,9 @@ function setSize() {
   win.setSize(600,600, true)
   win.setPosition(100,100, true)
 }
+
+function setKiosk(){
+  const win = remote.getCurrentWindow()
+  console.log(win.isKiosk())
+  win.setKiosk(!win.isKiosk());
+}
