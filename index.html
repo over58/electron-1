@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./script/event.js"></script>
+</head>
+<body>
+  <h1>electron 第一个应用</h1>
+  <ul>
+    <li>node-version <script>document.write(process.versions.node)</script></li>
+    <li>chrome-version <script>document.write(process.versions.chrome)</script></li>
+    <li>electron-version <script>document.write(process.versions.electron)</script></li>
+  </ul>
+  <button onclick="getSize()">获取窗口尺寸</button>
+  <button onclick="setSize()">设置窗口尺寸</button>
+</body>
+</html>
